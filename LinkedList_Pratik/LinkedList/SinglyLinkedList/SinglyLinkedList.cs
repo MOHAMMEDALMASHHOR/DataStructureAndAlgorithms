@@ -84,7 +84,7 @@ namespace DataStructures.LinkedList.SinglyLinkedList
         {
             return GetEnumerator(); // Implement the non-generic version of GetEnumerator
         }
-    }
+    } 
 }
 */
 namespace DataStructures.LinkedList.SinglyLinkedList
