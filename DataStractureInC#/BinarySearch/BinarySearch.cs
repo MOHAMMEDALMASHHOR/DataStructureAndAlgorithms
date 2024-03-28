@@ -14,5 +14,58 @@
 //The Binary search is used to search the element in the sorted tree
 public class BinarySearch
 {
+    /*
+    Console.Write("Enter a number: ");
+
+        // Read the input from the user
+        string userInput = Console.ReadLine();
+
+        int number;
+
+        // Try to parse the input string to an integer
+        if (int.TryParse(userInput, out number))
+        {
+            // Conversion successful
+            Console.WriteLine("You entered: " + number);
+        }
+        else
+        {
+            // Conversion failed
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        }*/
+   
     
+    
+    public int Search(int[] nums, int target)
+    {
+        for (int i = 0; i < nums.Length; i++){
+            for (int j = i; j < 0; j--){
+                if (nums[j] > nums[j+1]){
+                    int temp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = temp;
+                }
+            }
+        }
+        int left = 0;
+        int right = nums.Length - 1;
+        while (left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target)
+            {
+                return mid;
+            }
+            else if (nums[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+
 }
