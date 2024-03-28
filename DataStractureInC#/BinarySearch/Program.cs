@@ -19,6 +19,7 @@
 int[] arr = new int[number];
         for (int i = 0; i < number; i++)
         {
+            System.Console.WriteLine("Enter the value for index " + i+ ": ");
             var newValue = int.Parse(Console.ReadLine());   
             arr[i] =newValue ;
         }
