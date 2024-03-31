@@ -47,6 +47,13 @@ public class BinarySearch
                 }
             }
         }
+        string s="{";
+        foreach (var item in nums)
+        {
+            s += item.ToString() + ",";
+        }
+        s +="}";
+        System.Console.WriteLine("The array after been sorted is: " + s);
         int left = 0;
         int right = nums.Length - 1;
         while (left <= right)
