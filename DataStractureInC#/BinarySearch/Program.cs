@@ -28,9 +28,16 @@ int[] arr = new int[number];
         int result = bs.Search(arr, target);
         if (result != -1)
         {
-            Console.WriteLine("Element found at index: " + result);
+            Console.WriteLine("The element is found at index: " + result);
         }
         else
         {
-            Console.WriteLine("Element not found");
+            Console.WriteLine("The element is not found!!!");
         }
+string array1 = "{";
+foreach (var item in arr)
+{
+    array1 += item.ToString() + ",";    
+}
+array1 += "}";
+System.Console.WriteLine("The array is: " + array1);
