@@ -61,6 +61,7 @@ class Program
     }
 
     // Function to evaluate postfix expression
+    // This function assumes that the postfix expression is valid
     static int EvaluatePostfix(string postfixExpression)
     {
         Stack<int> operandStack = new Stack<int>(); // Initialize a stack to store operands
