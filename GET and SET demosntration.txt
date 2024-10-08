@@ -1,0 +1,72 @@
+Sure! In C#, properties are a way to encapsulate the fields of a class. You can use `get` and `set` accessors to control how a field is accessed and modified. Here’s a simple demonstration:
+
+### Example of Get and Set in C#
+
+```csharp
+using System;
+
+public class Person
+{
+    // Private field
+    private string name;
+
+    // Public property
+    public string Name
+    {
+        get
+        {
+            return name; // Return the value of the private field
+        }
+        set
+        {
+            if (!string.IsNullOrWhiteSpace(value)) // Basic validation
+            {
+                name = value; // Set the private field
+            }
+            else
+            {
+                throw new ArgumentException("Name cannot be null or empty.");
+            }
+        }
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person();
+        
+        // Using the set accessor
+        person.Name = "Alice";
+        
+        // Using the get accessor
+        Console.WriteLine(person.Name); // Outputs: Alice
+        
+        // Trying to set an invalid name
+        try
+        {
+            person.Name = ""; // This will throw an exception
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine(ex.Message); // Outputs: Name cannot be null or empty.
+        }
+    }
+}
+```
+
+### Explanation:
+
+1. **Private Field**: The `name` field is private, meaning it can only be accessed within the `Person` class.
+
+2. **Property**: The `Name` property has a `get` accessor to retrieve the value of `name` and a `set` accessor to modify it. The `set` accessor includes validation to ensure that the name is not null or empty.
+
+3. **Usage**: In the `Main` method, we create a `Person` object and set the name using the property. We also demonstrate how the property handles invalid input by throwing an exception.
+
+### Benefits of Using Properties:
+- **Encapsulation**: Control access to private fields.
+- **Validation**: Include validation logic in the `set` accessor.
+- **Flexibility**: You can easily change the underlying implementation without affecting the public interface.
+
+Feel free to ask if you have any more questions or need further examples!
